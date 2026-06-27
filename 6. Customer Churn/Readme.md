@@ -1,62 +1,62 @@
 # 👥 Customer Churn Prediction
 
 ## 📖 Overview
-This project predicts whether a customer will churn or not using machine learning. It includes data preprocessing, exploratory data analysis, feature engineering, and model training.
+This project predicts whether a customer will churn or not using machine learning. It features an end-to-end classification pipeline that handles severe data imbalance, evaluates multiple algorithms, and saves the optimized model for deployment.
 
 ---
 
 ## 📊 Dataset
-- dataset.csv (Customer churn dataset)
+- `dataset.csv` (Telecom customer churn dataset)
 
 ---
 
 ## 📁 Files
-- churn.ipynb → Complete analysis and model training
-- dataset.csv → Dataset used for training
+- `churn.ipynb` → Complete data analysis, SMOTE resampling, and model training
+- `dataset.csv` → Raw dataset used for training
+- `churn_model.pkl` → The final optimized Random Forest model saved via Pickle
 
 ---
 
 ## ⚙️ Workflow
-- Data cleaning and preprocessing
-- Exploratory Data Analysis (EDA)
-- Encoding categorical variables
-- Handling missing values
-- Feature selection
-- Train-test split
-- Handling imbalance using SMOTE
-- Model training and evaluation
+- Data cleaning (dropping `customerID`, converting `TotalCharges` to numeric)
+- Exploratory Data Analysis (EDA) with visualization
+- Encoding categorical variables using `LabelEncoder` and `get_dummies`
+- Handling missing values by filling `TotalCharges` NaNs with 0
+- Train-test split with stratification (`stratify=y`)
+- Handling class imbalance using **SMOTE**
+- Model training, evaluation, and 5-fold cross-validation
+- Hyperparameter tuning using **GridSearchCV**
+- Model serialization with `pickle`
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
-- Churn distribution analysis
-- Contract type vs churn
-- Internet service vs churn
-- Gender vs churn
-- Senior citizen vs churn
-- Monthly charges vs churn
-- Tenure vs churn
+## 📊 Exploratory Data Analysis (EDA) Key Insights
+- **Contract Type:** Month-to-month contract customers show the highest churn rates.
+- **Internet Service:** Fiber optic users churn significantly more than DSL or non-internet users.
+- **Financials & Loyalty:** Shorter tenure and higher monthly charges strongly correlate with a customer leaving.
+- **Gender:** Does not show a significant impact on customer churn behavior.
 
 ---
 
 ## 🤖 Models Used
 - Logistic Regression
 - Decision Tree Classifier
-- Random Forest Classifier (Best Model)
+- **Random Forest Classifier** (Best Model - Tuned via GridSearchCV & saved)
 
 ---
 
 ## ⚖️ Imbalance Handling
-- SMOTE used to balance dataset before training
+- **SMOTE** (Synthetic Minority Over-sampling Technique) was applied exclusively to the training set to prevent the classifiers from being biased toward non-churning customers.
 
 ---
 
-## 📈 Results
-- Random Forest performed best
-- Evaluation metrics used:
-  - Accuracy
+## 📈 Results & Evaluation
+- The Random Forest model achieved a strong average cross-validation score of **83.8%**.
+- **Top Predictors:** `MonthlyCharges`, `TotalCharges`, `Contract`, and `tenure` were identified as the most crucial features impacting the model's predictions.
+- Full evaluation was verified using:
+  - Accuracy Score
   - Confusion Matrix
-  - Classification Report
+  - Classification Report (Precision, Recall, F1-Score)
 
 ---
 
