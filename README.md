@@ -1,6 +1,6 @@
 # Machine Learning Projects Portfolio
 
-Welcome to my Machine Learning repository! This portfolio contains a collection of data science and ML projects focusing on exploratory data analysis (EDA), data preprocessing, feature engineering, and model implementation.
+Welcome to my Machine Learning repository! This portfolio contains a collection of data science and ML projects focusing on exploratory data analysis (EDA), data preprocessing, feature engineering and model implementation.
 
 ## 📁 Repository Structure
 Each folder in this repository represents a standalone machine learning project. Inside each folder, you will find:
