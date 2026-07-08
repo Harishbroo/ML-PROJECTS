@@ -1,7 +1,7 @@
 # 🚢 Titanic Survival Prediction
 
 ## 📖 Overview
-This project predicts whether a passenger survived the Titanic disaster using Machine Learning. The application is built with Streamlit, Dockerized using Docker, and deployed on Render.
+This project predicts whether a passenger survived the Titanic disaster using Machine Learning. The application is built with Streamlit, Dockerized for portability, and deployed on Render.
 
 ## 📊 Dataset
 - Source: Kaggle Titanic Dataset
@@ -41,3 +41,27 @@ This project predicts whether a passenger survived the Titanic disaster using Ma
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
+
+## 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t harishprj/titanic .
+```
+
+Run the container:
+
+```bash
+docker run -p 8001:8501 harishprj/titanic
+```
+
+## 🌐 Live Demo
+
+**Render:**  
+https://titanic-survival-jip1.onrender.com
+
+## 👨‍💻 Author
+
+**Harish Parajuli**
