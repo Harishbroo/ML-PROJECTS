@@ -1,18 +1,101 @@
 # 🛒 Mall Customer Segmentation
 
-This project uses unsupervised machine learning to group retail customers into distinct segments. By clustering customers based on their annual income and spending score, businesses can design data-driven, targeted marketing strategies.
+## 📖 Overview
 
-## 📊 Project Details
-* **Model Type:** Unsupervised Clustering
-* **Dataset Used:** `Mall_Customers.csv`
-* **Algorithm Used:** K-Means Clustering
+This project segments retail customers into different groups using **K-Means Clustering**, an unsupervised Machine Learning algorithm. The application is built with **Streamlit**, containerized using **Docker**, and deployed on **Render**.
 
-## 🛠️ Key Steps Implemented
-1. **Exploratory Data Analysis (EDA):** Visualized distributions of age, annual income, and spending scores.
-2. **Finding Optimal Clusters:** Utilized the **Elbow Method** (Within-Cluster Sum of Squares) to determine the ideal number of customer segments.
-3. **Model Training:** Trained the K-Means algorithm using Scikit-Learn to segment data points.
-4. **Cluster Visualization:** Plotted the final segments on a 2D scatter plot, clearly identifying customer groups (e.g., high-income/low-spend, high-income/high-spend).
+---
 
-## 📁 File Structure
-* `Mall_Customers.csv`: The customer database containing spending details.
-* `customerseg.ipynb`: Jupyter notebook containing the preprocessing, WCSS elbow curve, and K-Means segmentation code.
+## 🌐 Live Demo
+
+🚀 **Live Application:** https://customer-segmentation-cgbg.onrender.com
+
+---
+
+## 📊 Dataset
+
+- Dataset: `Mall_Customers.csv`
+- Model Type: Unsupervised Learning
+- Algorithm: K-Means Clustering
+
+---
+
+## 📁 Project Files
+
+- `customerseg.ipynb` – Data preprocessing, EDA, Elbow Method, and K-Means clustering
+- `Mall_Customers.csv` – Dataset
+- `kmeans_model.pkl` – Trained K-Means model
+- `app.py` – Streamlit web application
+- `requirements.txt` – Python dependencies
+- `Dockerfile` – Docker configuration
+
+---
+
+## ⚙️ Workflow
+
+- Data loading and inspection
+- Exploratory Data Analysis (EDA)
+- Feature selection
+- Finding the optimal number of clusters using the Elbow Method
+- K-Means model training
+- Customer segmentation
+- Cluster visualization
+
+---
+
+## 🤖 Algorithm Used
+
+- K-Means Clustering
+
+---
+
+## 📈 Results
+
+- Identified **5 distinct customer segments**
+- Visualized customer groups based on **Annual Income** and **Spending Score**
+- Useful for targeted marketing and customer analysis
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Streamlit
+- Docker
+- Render
+
+---
+
+## 🚀 Run Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t harishprj/customer-segmentation .
+```
+
+Run the Docker container:
+
+```bash
+docker run -p 8001:8501 harishprj/customer-segmentation
+```
+
+---
+
+## 👨‍💻 Author
+
+**Harish Parajuli**
