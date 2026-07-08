@@ -1,66 +1,134 @@
 # 👥 Customer Churn Prediction
 
 ## 📖 Overview
-This project predicts whether a customer will churn or not using machine learning. It features an end-to-end classification pipeline that handles severe data imbalance, evaluates multiple algorithms, and saves the optimized model for deployment.
+
+This project predicts whether a telecom customer is likely to churn using Machine Learning. It features an end-to-end classification pipeline that handles class imbalance using **SMOTE**, compares multiple classification models, optimizes the best model using **GridSearchCV**, and deploys the final model through a **Streamlit** web application. The application is containerized using **Docker** and deployed on **Render**.
+
+---
+
+## 🌐 Live Demo
+
+🚀 **Live Application:** https://customer-churn-85qa.onrender.com
 
 ---
 
 ## 📊 Dataset
-- `dataset.csv` (Telecom customer churn dataset)
+
+- Dataset: `dataset.csv`
+- Problem Type: Binary Classification
+- Domain: Telecom Customer Churn Prediction
 
 ---
 
-## 📁 Files
-- `churn.ipynb` → Complete data analysis, SMOTE resampling, and model training
-- `dataset.csv` → Raw dataset used for training
-- `churn_model.pkl` → The final optimized Random Forest model saved via Pickle
+## 📁 Project Files
+
+- `churn.ipynb` – Data preprocessing, EDA, model training, evaluation, and hyperparameter tuning
+- `dataset.csv` – Telecom customer dataset
+- `churn_model.pkl` – Optimized Random Forest model
+- `app.py` – Streamlit web application
+- `requirements.txt` – Python dependencies
+- `Dockerfile` – Docker configuration
 
 ---
 
 ## ⚙️ Workflow
-- Data cleaning (dropping `customerID`, converting `TotalCharges` to numeric)
-- Exploratory Data Analysis (EDA) with visualization
-- Encoding categorical variables using `LabelEncoder` and `get_dummies`
-- Handling missing values by filling `TotalCharges` NaNs with 0
-- Train-test split with stratification (`stratify=y`)
+
+- Data loading and inspection
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Encoding categorical variables
+- Handling missing values
+- Train-test split with stratification
 - Handling class imbalance using **SMOTE**
-- Model training, evaluation, and 5-fold cross-validation
+- Model training and evaluation
+- Cross-validation
 - Hyperparameter tuning using **GridSearchCV**
-- Model serialization with `pickle`
+- Model serialization using **Pickle**
+- Customer churn prediction
 
 ---
 
 ## 📊 Exploratory Data Analysis (EDA) Key Insights
-- **Contract Type:** Month-to-month contract customers show the highest churn rates.
-- **Internet Service:** Fiber optic users churn significantly more than DSL or non-internet users.
-- **Financials & Loyalty:** Shorter tenure and higher monthly charges strongly correlate with a customer leaving.
-- **Gender:** Does not show a significant impact on customer churn behavior.
+
+- Month-to-month contract customers have the highest churn rate.
+- Customers using Fiber Optic internet are more likely to churn.
+- Customers with shorter tenure and higher monthly charges are at greater risk of leaving.
+- Gender has little impact on customer churn.
 
 ---
 
 ## 🤖 Models Used
+
 - Logistic Regression
 - Decision Tree Classifier
-- **Random Forest Classifier** (Best Model - Tuned via GridSearchCV & saved)
+- Random Forest Classifier (Best Model)
 
 ---
 
 ## ⚖️ Imbalance Handling
-- **SMOTE** (Synthetic Minority Over-sampling Technique) was applied exclusively to the training set to prevent the classifiers from being biased toward non-churning customers.
+
+- SMOTE (Synthetic Minority Over-sampling Technique)
 
 ---
 
-## 📈 Results & Evaluation
-- The Random Forest model achieved a strong average cross-validation score of **83.8%**.
-- **Top Predictors:** `MonthlyCharges`, `TotalCharges`, `Contract`, and `tenure` were identified as the most crucial features impacting the model's predictions.
-- Full evaluation was verified using:
+## 📈 Results
+
+- Average Cross-Validation Accuracy: **83.8%**
+- Best model selected using **GridSearchCV**
+- Important features:
+  - MonthlyCharges
+  - TotalCharges
+  - Contract
+  - Tenure
+- Evaluated using:
   - Accuracy Score
   - Confusion Matrix
-  - Classification Report (Precision, Recall, F1-Score)
+  - Precision
+  - Recall
+  - F1-Score
 
 ---
 
-## 🚀 How to Run
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Imbalanced-learn (SMOTE)
+- Streamlit
+- Docker
+- Render
+
+---
+
+## 🚀 Run Locally
+
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
-jupyter notebook
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t harishprj/customer-churn .
+```
+
+Run the Docker container:
+
+```bash
+docker run -p 8001:8501 harishprj/customer-churn
+```
+
+---
+
+## 👨‍💻 Author
+
+**Harish Parajuli**
