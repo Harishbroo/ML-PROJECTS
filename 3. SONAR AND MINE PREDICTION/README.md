@@ -1,18 +1,97 @@
 # 💎 Sonar Rock vs. Mine Prediction
 
-This project processes underwater sonar signals to determine whether a detected object is a harmless rock or a metal military mine. The dataset consists of sonar frequencies bounced off different surfaces at various angles.
+## 📖 Overview
 
-## 📊 Project Details
-* **Model Type:** Binary Classification (Rock vs. Mine)
-* **Dataset Used:** `sonardata.csv`
-* **Key Focus:** High-dimensional data processing and analyzing continuous frequency patterns.
+This project predicts whether an underwater object is a **Rock** or a **Mine** using Machine Learning. The application is built with **Streamlit**, containerized using **Docker**, and deployed on **Render**.
 
-## 🛠️ Key Steps Implemented
-1. **Data Exploration:** Analyzed the 60 continuous numerical features representing sonar frequencies.
-2. **Data Preprocessing:** Checked for missing values and split data into training and testing sets.
-3. **Model Selection:** Trained a binary classification model (such as Logistic Regression) to detect patterns.
-4. **Evaluation:** Evaluated accuracy metrics to ensure reliable detection rates for security applications.
+---
 
-## 📁 File Structure
-* `sonardata.csv`: The dataset containing sonar frequency responses.
-* `rockvsmine.ipynb`: Jupyter notebook with the complete data analysis, training workflow, and model evaluation.
+## 🌐 Live Demo
+
+🚀 **Live Application:** https://sonar-latest.onrender.com
+
+---
+
+## 📊 Dataset
+
+- Dataset: `sonardata.csv`
+- Type: Binary Classification (Rock vs. Mine)
+- Features: 60 continuous sonar frequency measurements
+
+---
+
+## 📁 Project Files
+
+- `rockvsmine.ipynb` – Data preprocessing, model training, and evaluation
+- `app.py` – Streamlit web application
+- `sonar_model.pkl` – Trained Machine Learning model
+- `requirements.txt` – Python dependencies
+- `Dockerfile` – Docker configuration
+
+---
+
+## ⚙️ Workflow
+
+- Data loading and inspection
+- Exploratory Data Analysis (EDA)
+- Data preprocessing
+- Train-test split
+- Model training
+- Model evaluation
+- Prediction using the trained model
+
+---
+
+## 🤖 Model Used
+
+- Logistic Regression
+
+---
+
+## 📈 Results
+
+- Successfully classified underwater objects as **Rock** or **Mine**
+- Achieved high classification accuracy on the test dataset
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Streamlit
+- Docker
+- Render
+
+---
+
+## 🚀 Run Locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+---
+
+## 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t harishprj/sonar .
+```
+
+Run the Docker container:
+
+```bash
+docker run -p 8001:8501 harishprj/sonar
+```
+
+---
+
+## 👨‍💻 Author
+
+**Harish Parajuli**
