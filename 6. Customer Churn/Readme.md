@@ -1,8 +1,7 @@
 # 👥 Customer Churn Prediction
 
 ## 📖 Overview
-
-This project predicts whether a telecom customer is likely to churn using Machine Learning. It features an end-to-end classification pipeline that handles class imbalance using SMOTE, compares multiple classification models including an Artificial Neural Network (ANN), optimizes the best traditional ML model using GridSearchCV, and deploys the final model through a Streamlit web application. The application is containerized using Docker and deployed on Render.
+This project predicts whether a telecom customer is likely to churn using Machine Learning. It features an end-to-end classification pipeline that handles class imbalance using **SMOTE**, compares multiple classification models including an **Artificial Neural Network (ANN)**, optimizes the best traditional ML model using **GridSearchCV**, and deploys the final model through a **Streamlit** web application. The application is containerized using **Docker** and deployed on **Render**.
 ---
 
 ## 🌐 Live Demo
