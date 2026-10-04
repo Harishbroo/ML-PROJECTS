@@ -1,7 +1,9 @@
 # 👥 Customer Churn Prediction
 
 ## 📖 Overview
+
 This project predicts whether a telecom customer is likely to churn using Machine Learning. It features an end-to-end classification pipeline that handles class imbalance using **SMOTE**, compares multiple classification models including an **Artificial Neural Network (ANN)**, optimizes the best traditional ML model using **GridSearchCV**, and deploys the final model through a **Streamlit** web application. The application is containerized using **Docker** and deployed on **Render**.
+
 ---
 
 ## 🌐 Live Demo
@@ -12,93 +14,101 @@ This project predicts whether a telecom customer is likely to churn using Machin
 
 ## 📊 Dataset
 
-- Dataset: `dataset.csv`
-- Problem Type: Binary Classification
-- Domain: Telecom Customer Churn Prediction
+* Dataset: `dataset.csv`
+* Problem Type: Binary Classification
+* Domain: Telecom Customer Churn Prediction
 
 ---
 
 ## 📁 Project Files
 
-- `churn.ipynb` – Data preprocessing, EDA, model training, evaluation, and hyperparameter tuning
-- `dataset.csv` – Telecom customer dataset
-- `churn_model.pkl` – Optimized Random Forest model
-- `app.py` – Streamlit web application
-- `requirements.txt` – Python dependencies
-- `Dockerfile` – Docker configuration
+* `churn.ipynb` – Data preprocessing, EDA, model training, ANN implementation, evaluation, and hyperparameter tuning
+* `dataset.csv` – Telecom customer dataset
+* `churn_model.pkl` – Optimized Random Forest model used for deployment
+* `app.py` – Streamlit web application
+* `requirements.txt` – Python dependencies
+* `Dockerfile` – Docker configuration
 
 ---
 
 ## ⚙️ Workflow
 
-- Data loading and inspection
-- Data cleaning and preprocessing
-- Exploratory Data Analysis (EDA)
-- Encoding categorical variables
-- Handling missing values
-- Train-test split with stratification
-- Handling class imbalance using **SMOTE**
-- Model training and evaluation
-- Cross-validation
-- Hyperparameter tuning using **GridSearchCV**
-- Model serialization using **Pickle**
-- Customer churn prediction
+* Data loading and inspection
+* Data cleaning and preprocessing
+* Exploratory Data Analysis (EDA)
+* Encoding categorical variables
+* Handling missing values
+* Train-test split with stratification
+* Handling class imbalance using **SMOTE**
+* Model training and evaluation
+* Training an **Artificial Neural Network (ANN)**
+* Cross-validation
+* Hyperparameter tuning using **GridSearchCV**
+* Model comparison
+* Model serialization using **Pickle**
+* Customer churn prediction
 
 ---
 
 ## 📊 Exploratory Data Analysis (EDA) Key Insights
 
-- Month-to-month contract customers have the highest churn rate.
-- Customers using Fiber Optic internet are more likely to churn.
-- Customers with shorter tenure and higher monthly charges are at greater risk of leaving.
-- Gender has little impact on customer churn.
+* Month-to-month contract customers have the highest churn rate.
+* Customers using Fiber Optic internet are more likely to churn.
+* Customers with shorter tenure and higher monthly charges are at greater risk of leaving.
+* Gender has little impact on customer churn.
 
 ---
 
 ## 🤖 Models Used
 
-- Logistic Regression
-- Decision Tree Classifier
-- Random Forest Classifier (Best Model)
+* Logistic Regression
+* Decision Tree Classifier
+* Random Forest Classifier (Best Model)
+* Artificial Neural Network (ANN)
 
 ---
 
 ## ⚖️ Imbalance Handling
 
-- SMOTE (Synthetic Minority Over-sampling Technique)
+* SMOTE (Synthetic Minority Over-sampling Technique)
 
 ---
 
 ## 📈 Results
 
-- Average Cross-Validation Accuracy: **83.8%**
-- Best model selected using **GridSearchCV**
-- Important features:
-  - MonthlyCharges
-  - TotalCharges
-  - Contract
-  - Tenure
-- Evaluated using:
-  - Accuracy Score
-  - Confusion Matrix
-  - Precision
-  - Recall
-  - F1-Score
+* Average Cross-Validation Accuracy: **83.8%**
+* Best traditional ML model selected using **GridSearchCV**
+* **Random Forest** was selected as the final model for deployment.
+* **Artificial Neural Network (ANN)** was implemented and evaluated as an additional deep learning approach.
+* Important features:
+
+  * MonthlyCharges
+  * TotalCharges
+  * Contract
+  * Tenure
+* Evaluated using:
+
+  * Accuracy Score
+  * Confusion Matrix
+  * Precision
+  * Recall
+  * F1-Score
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Imbalanced-learn (SMOTE)
-- Streamlit
-- Docker
-- Render
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* Imbalanced-learn (SMOTE)
+* TensorFlow / Keras
+* Streamlit
+* Docker
+* Render
 
 ---
 
